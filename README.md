@@ -15,16 +15,16 @@ Asegúrate de tener instalados los siguientes requisitos previos en tu sistema:
 ```
 ## Instalar Node-Module
 ```bash
- npm i
+npm i
 ```
 ## Subir Json Server
 
 ```bash
-- npm run serverAPI
+npm run serverAPI
 ```
-## Subir el servidor
+## Subir el servidor local(Angular)
 ```bash
-- ng serve -o
+ng serve -o
 ```
 
 
