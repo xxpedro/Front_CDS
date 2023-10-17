@@ -27,6 +27,11 @@ npm run serverAPI
 ng serve -o
 ```
 
+## Usuarios de la aplicacion
+- Admin(userName:admin, pass: admin)
+- User(userName:user, pass: user)
+
+
 
 
   
