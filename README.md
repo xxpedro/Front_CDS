@@ -11,13 +11,10 @@ Asegúrate de tener instalados los siguientes requisitos previos en tu sistema:
 
    ```bash
    npm install -g @angular/cli
+   git clone https://github.com/xxpedro/TaskHub.git
 
-   ```bash
-   npm run serverAPI
+ git clone https://github.com/xxpedro/TaskHub.git
 
-##Para correr en la maquina local
- ```bash
-   ng Serve -o
 
  
 
