@@ -11,9 +11,9 @@ Asegúrate de tener instalados los siguientes requisitos previos en tu sistema:
 
    ```bash
    npm install -g @angular/cli
-   git clone https://github.com/xxpedro/TaskHub.git
+      ```bash
+   npm install -g @angular/cli
 
- git clone https://github.com/xxpedro/TaskHub.git
 
 
  
