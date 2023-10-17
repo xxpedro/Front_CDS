@@ -11,9 +11,9 @@ Asegúrate de tener instalados los siguientes requisitos previos en tu sistema:
 
    ```bash
    npm install -g @angular/cli
-      ```bash
-   npm install -g @angular/cli
-
+```bash
+# Este es el bloque de código Bash 1
+echo "Hola, Mundo 1"
 
 
  
