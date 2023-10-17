@@ -14,9 +14,9 @@ Asegúrate de tener instalados los siguientes requisitos previos en tu sistema:
 
 ##para correr el Json sertver
  ```bash
-   npm run serverAPI
+npm run serverAPI
 
-## Para correr en la maquina local
+##Para correr en la maquina local
  ```bash
    ng Serve -o
 
