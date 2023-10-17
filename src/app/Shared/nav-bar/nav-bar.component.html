@@ -1,0 +1,15 @@
+<nav class="navbar">
+  <div class="navbar-logo">
+    <div [routerLink]="['/project']" class="image-container">
+      <img src="../../../assets/images/logo.png" class="imageLogo" alt="Logo">
+  </div>
+  </div>
+  <ul class="navbar-menu">
+    <li [routerLink]="['/project']" class="navbar-submenu">
+      <label class="circle-label">
+        {{LogedUserName}}
+      </label>
+    </li>
+  </ul>
+
+</nav>

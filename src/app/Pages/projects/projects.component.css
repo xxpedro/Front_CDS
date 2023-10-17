@@ -1,0 +1,95 @@
+
+
+
+/* Animación de entrada para la tarjeta */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos generales */
+/* Animación de entrada para las cartas */
+@keyframes card-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.card-animation {
+  animation: card-fade-in 0.5s;
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.card-text {
+  font-size: 0.875rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-edit,
+.btn-delete {
+  flex: 1;
+  font-size: 0.75rem;
+  margin-right: 5px;
+}
+
+.floating-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: green;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.floating-button::before {
+  content: "+";
+  font-size: 24px;
+  color: #fff;
+}
+
+.textbox {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.textbox i {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #777;
+}
+
+.textbox input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #333;
+  outline: none;
+}

@@ -1,0 +1,52 @@
+
+<div class="container pt-5 shadow-lg mt-4 p-3">
+  <h3 class="mb-3">Administrar Proyectos</h3>
+
+  <button class="btn btn-success shadow m-2" (click)="displayCreateModal(content)" *ngxPermissionsOnly="['canCreate']"  >
+    <i class="fa fa-plus" aria-hidden="true"></i>
+  </button>
+  <div class="textbox ">
+    <input type="text" [(ngModel)]="filterCriteria" (input)="filterProjects()" placeholder="Filtrar proyectos">
+    </div>
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3"  *ngFor="let item of filteredProjects">
+      <div class="card mb-3 card-animation">
+        <div class="card-body" [routerLink]="['/project', item.id, 'task']">
+          <h5 class="card-title">{{item.name}}</h5>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-info btn-sm btn-edit" *ngxPermissionsOnly="['canEdit']"  (click)="displayEditModal(item,content)" data-toggle="modal" data-target="#editModal2">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+          <button class="btn btn-danger btn-sm btn-delete" *ngxPermissionsOnly="['canDelete']" (click)="deleteProject(item.id)" data-toggle="modal" data-target="#deleteModal2">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Agregar Proyecto</h4>
+      <button type="button" class="btn" (click)="c('Close click')">
+        <span>&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="projectForm">
+        <div class="textbox">
+          <input type="text" placeholder="Nombre del proyecto" formControlName="name">
+          <div *ngIf="projectForm.get('name')?.hasError('required') && projectForm.get('name')?.touched" class="error-message">
+            El nombre del proyecto es requerido.
+          </div>
+        </div>
+        <button type="button" (click)="isCreate ? CreateProject() : editProject()" class="btn btn-primary">
+          {{ isCreate ? 'Crear' : 'Editar' }}
+        </button>
+      </form>
+    </div>
+  </ng-template>
+
+
+</div>

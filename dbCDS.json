@@ -1,0 +1,96 @@
+{
+  "usuarios": [
+    {
+      "name": "admin",
+      "lastName": "admin",
+      "pass": "admin",
+      "roleId": 1,
+      "id": 1
+    },
+    {
+      "name": "user",
+      "lastName": "user",
+      "pass": "user",
+      "roleId": 2,
+      "id": 2
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "Administrador"
+    },
+    {
+      "id": 2,
+      "name": "Usuario Estándar"
+    }
+  ],
+  "proyectos": [
+    {
+      "name": "FAM",
+      "id": 1
+    },
+    {
+      "name": "Rica  Project",
+      "id": 3
+    },
+    {
+      "name": "Whey  Project",
+      "id": 4
+    },
+    {
+      "name": "Muscle Teck  Project",
+      "id": 5
+    },
+    {
+      "name": "Creatine Pure Proyect",
+      "id": 6
+    },
+    {
+      "name": "Prolive Bio5 Project",
+      "id": 7
+    }
+  ],
+  "permiso_roles": [
+    {
+      "id": 1,
+      "roleId": 1,
+      "permiso": "canEdit"
+    },
+    {
+      "id": 2,
+      "roleId": 1,
+      "permiso": "canDelete"
+    },
+    {
+      "id": 2,
+      "roleId": 1,
+      "permiso": "canCreateUsers"
+    },
+    {
+      "id": 2,
+      "roleId": 1,
+      "permiso": "canCreate"
+    }
+  ],
+  "tareas": [
+    {
+      "name": "Preparar estructura del proyecto",
+      "projectId": "3",
+      "estado": "Completado",
+      "id": 1
+    },
+    {
+      "name": "Crear pantalla de usuarios",
+      "projectId": "3",
+      "estado": "En Proceso",
+      "id": 2
+    },
+    {
+      "name": "Poner boton en la pantalla de mantenimiento",
+      "projectId": "3",
+      "estado": "En Proceso",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.left-panel {
+  flex: 1;
+  background: linear-gradient(to right, #333, #555);
+  color: #fff;
+  padding: 40px;
+  text-align: center;
+}
+
+.left-panel h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.left-panel p {
+  font-size: 1.2rem;
+}
+
+.right-panel {
+  flex: 1;
+  text-align: center;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin: 20px;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: fade-in 1.5s ease-in-out;
+
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.login-box h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilos del formulario */
+.textbox {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.textbox input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #333;
+  outline: none;
+  font-size: 1rem;
+}
+
+.btn {
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background: #555;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 10px;
+}
+
+a:hover {
+  color: #555;
+}
+
+/* Media queries para hacer responsive */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .left-panel h1 {
+    font-size: 2rem;
+  }
+
+  .left-panel p {
+    font-size: 1rem;
+  }
+
+  .right-panel {
+    margin: 0;
+  }
+
+  .login-box {
+    width: 100%;
+    max-width: none;
+    margin: 10px;
+  }
+
+  .login-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+  }
+}
+
+/* Media query para pantallas pequeñas (como dispositivos móviles) */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px;
+  }
+
+  .left-panel {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .left-panel h1 {
+    font-size: 1.8rem;
+  }
+
+  .left-panel p {
+    font-size: 1rem;
+  }
+
+  .right-panel {
+    margin: 0;
+  }
+
+  .login-box {
+    width: 100%;
+    max-width: none;
+    margin: 10px;
+  }
+
+  .login-box h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    padding: 6px 12px;
+  }
+
+  a {
+    font-size: 0.8rem;
+    margin-top: 8px;
+  }
+}
+

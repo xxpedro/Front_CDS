@@ -1,0 +1,82 @@
+<div class="container pt-5 mt-5">
+
+
+
+  <div class="container ">
+    <h1>Lista de Usuarios</h1>
+    <button class="btn btn-success shadow m-2" (click)="displayCreateModal(content)" *ngxPermissionsOnly="['canCreate']"  >
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    </button>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Contraseña</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of filteredUsers">
+                <td>{{ user.name }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.pass }}</td>
+                <td class="actions">
+                    <button class="btn btn-info" (click)="displayEditModal(user, content)">Editar</button>
+                    <button class="btn btn-danger" (click)="deleteUser(user)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Agregar Usuario</h4>
+      <button type="button" class="close" (click)="c('Close click')">
+        <span>&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="userForm">
+        <div class="task-details m-2">
+          <h4>Nombre</h4>
+          <input type="text" class="form-control" placeholder="Nombre" formControlName="name">
+          <div *ngIf="userForm.get('name')?.hasError('required') && userForm.get('name')?.touched" class="error-message">
+            El nombre es requerido.
+          </div>
+        </div>
+        <div class="task-details m-2">
+          <h4>Apellido</h4>
+          <input type="text" class="form-control" placeholder="Apellido" formControlName="lastName">
+          <div *ngIf="userForm.get('lastName')?.hasError('required') && userForm.get('lastName')?.touched" class="error-message">
+            El apellido es requerido.
+          </div>
+        </div>
+        <div class="task-details m-2">
+          <h4>Rol</h4>
+          <select class="form-control" formControlName="roleId">
+            <option *ngFor="let roll of allRolls" [ngValue]="roll.id">{{ roll.name }}</option>
+          </select>
+          <div *ngIf="userForm.get('roleId')?.hasError('required') && userForm.get('roleId')?.touched" class="error-message">
+            El rol es requerido.
+          </div>
+        </div>
+        <div class="task-details m-2">
+          <h4>Contraseña</h4>
+          <input type="password" class="form-control" placeholder="Contraseña" formControlName="pass">
+          <div *ngIf="userForm.get('pass')?.hasError('required') && userForm.get('pass')?.touched" class="error-message">
+            La contraseña es requerida.
+          </div>
+        </div>
+        <button type="button" (click)="isCreate ? createUser() : editUser()" class="btn btn-primary">
+          {{ isCreate ? 'Crear' : 'Editar' }}
+        </button>
+      </form>
+    </div>
+  </div>
+</ng-template>
+
+

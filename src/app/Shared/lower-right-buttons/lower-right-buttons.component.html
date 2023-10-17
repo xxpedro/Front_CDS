@@ -1,0 +1,5 @@
+<div class="floating-buttons">
+  <button class="circular-button"  [routerLink]="['/project']"><i class="fa fa-home" aria-hidden="true"></i></button>
+  <button class="circular-button"  *ngxPermissionsOnly="['canCreateUsers']" [routerLink]="['/project','user']" ><i class="fa fa-user" aria-hidden="true"></i></button>
+  <button class="circular-button"  (click)="logOuth()" ><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+</div>

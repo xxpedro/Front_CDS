@@ -1,0 +1,126 @@
+
+<div class=" container shadow-lg p-3 mt-4" >
+  <h3 class="m-5">Administrar Tareas</h3>
+    <button class="btn btn-success shadow m-2" (click)="displayCreateModal(content)" *ngxPermissionsOnly="['canCreate']"  >
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    </button>
+    <div class="textbox column">
+      <input type="text" [(ngModel)]="filterCriteria" (input)="filterTask()" placeholder="Filtrar Tarea">
+    </div>
+    <main>
+      <section class="column">
+        <h5>Pendientes</h5>
+        <div class="task-card" [hidden]="item.estado != 'Por Hacer'" *ngFor="let item of filteredTask">
+          <div class="task-card-content">
+            <div class="task-title" (click)="getCardDetails(contentTask, item)">
+              {{item.name.length > 20 ? item.name.substring(0, 20) + '...' : item.name}}
+            </div>
+          </div>
+          <hr>
+          <div class="button-group">
+            <button class="more-options" *ngxPermissionsOnly="['canDelete']" (click)="deleteTask(item.id)">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+            <button class="more-options" *ngxPermissionsOnly="['canEdit']" (click)="displayEditModal(item, content)">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="column">
+        <h5>En Proceso</h5>
+        <div class="task-card" [hidden]="item.estado != 'En Proceso'" *ngFor="let item of filteredTask">
+          <div class="task-card-content">
+            <div class="task-title" (click)="getCardDetails(contentTask, item)">
+              {{item.name.length > 20 ? item.name.substring(0, 20) + '...' : item.name}}
+            </div>
+          </div>
+          <hr>
+          <div class="button-group">
+            <button class="more-options" *ngxPermissionsOnly="['canDelete']" (click)="deleteTask(item.id)">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+            <button class="more-options" *ngxPermissionsOnly="['canEdit']" (click)="displayEditModal(item, content)">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="column">
+        <h5>Completado</h5>
+        <div class="task-card" [hidden]="item.estado != 'Completado'" *ngFor="let item of filteredTask">
+          <div class="task-card-content">
+            <div class="task-title" (click)="getCardDetails(contentTask, item)">
+              {{item.name.length > 20 ? item.name.substring(0, 20) + '...' : item.name}}
+            </div>
+          </div>
+          <hr>
+          <div class="button-group">
+            <button class="more-options" *ngxPermissionsOnly="['canDelete']" (click)="deleteTask(item.id)">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+            <button class="more-options" *ngxPermissionsOnly="['canEdit']" (click)="displayEditModal(item, content)">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Agregar Tarea</h4>
+      <button type="button" class="btn" (click)="c('Close click')">
+        <span>&times;</span>
+      </button>
+  </div>
+
+    <form class="modal-body" [formGroup]="tasktForm">
+      <div class="textbox">
+        <input type="text" placeholder="Agregar Tarea" formControlName="name">
+        <div *ngIf="tasktForm.get('name')?.hasError('required') && tasktForm.get('name')?.touched" class="error-message">
+          El nombre de la tarea es requerido.
+        </div>
+      </div>
+
+      <div class="textbox">
+        <label for="taskName">Estado</label>
+        <select class="textbox" formControlName="estado" id="taskName">
+          <option  *ngFor="let item of statusSimulation" [value]="item.name">{{item.name}}</option>
+        </select>
+        <div *ngIf="tasktForm.get('estado')?.hasError('required') && tasktForm.get('estado')?.touched" class="error-message">
+          El nombre de la tarea es requerido.
+        </div>
+      </div>
+
+      <button type="button" (click)="isCreate ? CreateTask() : editTask()" class="btn btn-primary">
+        {{ isCreate ? 'Crear' : 'Editar' }}
+      </button>
+    </form>
+  </ng-template>
+
+  <ng-template #contentTask let-c="close" let-d="dismiss">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Detalles de la Tarea</h4>
+        <button type="button" class="close" (click)="c('Close click')">
+          <span>&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="task-details">
+          <h4>Nombre de la Tarea</h4>
+          <p class="">{{ taskDetail.name }}</p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="c('Close click')">Cerrar</button>
+      </div>
+    </div>
+  </ng-template>
+
+

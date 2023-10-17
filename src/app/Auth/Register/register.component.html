@@ -1,0 +1,36 @@
+<div class="login-container">
+  <div class="left-panel">
+      <h1>Bienvenido a TASKHUB</h1>
+      <p>¡Regístrate para acceder a nuestro sitio!</p>
+  </div>
+  <div class="right-panel">
+      <div class="login-box">
+          <h2>Registrar Usuario</h2>
+          <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+              <div class="textbox">
+                  <input type="text" placeholder="Nombre" formControlName="name">
+                  <div *ngIf="registerForm.get('name')?.hasError('required') && registerForm.get('name')?.touched" class="error-message">
+                      El nombre es requerido.
+                  </div>
+              </div>
+              <div class="textbox">
+                  <input type="text" placeholder="Apellido" formControlName="lastName">
+                  <div *ngIf="registerForm.get('lastName')?.hasError('required') && registerForm.get('lastName')?.touched" class="error-message">
+                      El apellido es requerido.
+                  </div>
+              </div>
+              <div class="textbox">
+                  <input type="password" placeholder="Contraseña" formControlName="pass">
+                  <div *ngIf="registerForm.get('pass')?.hasError('required') && registerForm.get('pass')?.touched" class="error-message">
+                      La contraseña es requerida.
+                  </div>
+                  <div *ngIf="registerForm.get('pass')?.hasError('minlength') && registerForm.get('pass')?.touched" class="error-message">
+                      La contraseña debe tener al menos 8 caracteres.
+                  </div>
+              </div>
+              <input type="submit" class="btn" value="Registrar">
+              <a [routerLink]="['/login']">Regresar a la página de inicio de sesión</a>
+          </form>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+.container {
+    display: flex !important;
+    height: 100% !important;
+}
+
+/* Estilos del Sidebar */
+.sidenav {
+    width: 250px;
+    background-color: white;
+    color: black;
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+.sidenav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.sidenav ul li {
+    padding: 20px 0;
+    border-bottom: 1px solid #555;
+}
+
+.sidenav ul li:last-child {
+    border-bottom: none;
+}
+
+.sidenav ul li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav ul li a:hover {
+    background-color: #555;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px;
+
+}
