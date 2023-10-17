@@ -12,7 +12,7 @@ Asegúrate de tener instalados los siguientes requisitos previos en tu sistema:
    ```bash
    npm install -g @angular/cli
 
-   ```
+   ```bash
    s
 
  
