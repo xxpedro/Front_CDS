@@ -1,27 +1,21 @@
-# FrontCDS
+# FrontCDS - Aplicación de Gestión de Proyectos y Tareas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
+FrontCDS es una aplicación Angular para gestionar proyectos y tareas de manera eficiente.
 
-## Development server
+## Requisitos Previos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Asegúrate de tener instalados los siguientes requisitos previos en tu sistema:
 
-## Code scaffolding
+- [Node.js](https://nodejs.org/): Se requiere Node.js para ejecutar la aplicación Angular.
+- [Angular CLI](https://cli.angular.io/): Instala Angular CLI globalmente utilizando npm (Node Package Manager) con el siguiente comando:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+   ```bash
+   npm install -g @angular/cli
 
-## Build
+##para correr el Json sertver
+   npm run serverAPI 
+## Para correr en la maquina local
+   ng Serve -o
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ 
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
