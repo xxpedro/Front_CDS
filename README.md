@@ -13,8 +13,11 @@ Asegúrate de tener instalados los siguientes requisitos previos en tu sistema:
    npm install -g @angular/cli
 
 ##para correr el Json sertver
-   npm run serverAPI 
+ ```bash
+   npm run serverAPI
+
 ## Para correr en la maquina local
+ ```bash
    ng Serve -o
 
  
